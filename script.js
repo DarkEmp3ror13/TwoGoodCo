@@ -1,8 +1,6 @@
 function locomotiveAnimation() {
+
     gsap.registerPlugin(ScrollTrigger);
-  
-    // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
-  
     const locoScroll = new LocomotiveScroll({
       el: document.querySelector("#main"),
       smooth: true,
@@ -16,7 +14,7 @@ function locomotiveAnimation() {
         return arguments.length
           ? locoScroll.scrollTo(value, 0, 0)
           : locoScroll.scroll.instance.scroll.y;
-      }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+      }, 
       getBoundingClientRect() {
         return {
           top: 0,
@@ -62,8 +60,36 @@ function locomotiveAnimation() {
       },
     });
   }
-  navbarAnimation()
+  navbarAnimation();
   
+  function menuButtonClick() {
+    const menuButton = document.querySelector(".ri-menu-fill");
+    menuButton.addEventListener('click', () => {
+      const navMenu = document.querySelector(".nav-menu");
+      // console.log(navMenu);
+      navMenu.classList.remove(".nav-menu")
+      navMenu.classList.toggle("nav-menu-clicked")
+      menuButtonClickAnimation ();
+    })
+  }
+  menuButtonClick();
+
+  function menuButtonClickAnimation () {
+    gsap.from(".nav-menu",{
+      opacity: 1,
+      duration: 2,
+      
+    })
+    gsap.from(".nav-menus ul li", {
+      y: 100,
+      opacity: 0,
+      delay: 0.2,
+      duration: 0.5,
+      stagger: 0.1,
+    });
+  }
+  // menuButtonClickAnimation ();
+
   function videoconAnimation() {
     var videocon = document.querySelector("#video-container");
     var playbtn = document.querySelector("#play");
@@ -112,15 +138,6 @@ function locomotiveAnimation() {
         top: dets.y,
       });
     });
-    // document.querySelector("#child1").addEventListener("mouseenter",function(){
-  
-    // })
-  
-    // document.querySelector("#child1").addEventListener("mouseleave",function(){
-    //   gsap.to("#cursor",{
-    //     transform: 'translate(-50%,-50%) scale(0)'
-    //   })
-    // })
     document.querySelectorAll(".child").forEach(function (elem) {
       elem.addEventListener("mouseenter", function () {
         gsap.to("#cursor", {

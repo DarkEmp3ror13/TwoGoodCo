@@ -2,10 +2,18 @@
     font-family: Futura;
     src: url(./Futura-Bold.ttf);
 }
+
 @font-face {
     font-family: Gilroy;
     src: url(./Gilroy-Medium.ttf);
 }
+
+@font-face {
+    font-family: FuturaMedium;
+    src: url(./font/futura\ medium\ bt.ttf);
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -37,7 +45,14 @@ body {
     align-items: flex-start;
     justify-content: space-between;
     padding: 25px;
+    z-index: 2;
+    position: relative;
 }
+/* 
+#nav-part1 img {
+    height: 120px;
+    
+} */
 
 #nav #nav-part2 {
     display: flex;
@@ -52,7 +67,7 @@ body {
 
 #nav-part1 {
     /* background-color: RED; */
-    height: 82px;
+    height: 80px;
     overflow: hidden;
 }
 
@@ -74,18 +89,93 @@ body {
     padding: 10px;
     border-radius: 50px;
     background-color: #F7F7F7;
+    
 }
 
 #nav-part2 #icons i {
     font-size: 18px;
     margin: 0 20px;
     font-weight: 100;
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: flex;
+    height: 80vh;
+    width: 100%;
+    background-color: #000;
+    color: #F7F7F7;
+    padding: 3vh 3vw;
+    position: absolute;
+    visibility: hidden;
+}
+
+.nav-menu-clicked {
+    display: flex;
+    height: 80vh;
+    width: 100%;
+    background-color: #000;
+    color: #F7F7F7;
+    padding: 3vh 3vw;
+    position: absolute;
+    z-index: 3;
+    visibility: visible;
+}
+
+.nav-menu h3 {
+    padding: 5vh 0;
+    font-family: FuturaMedium;
+    letter-spacing: 0.05rem;
+}
+
+.nav-socials {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.nav-socials ul li {
+    list-style: none;
+    font-family: FuturaMedium;
+    letter-spacing: 0.05rem;
+}
+
+.nav-FAQs {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+
+.nav-FAQs ul li {
+    list-style: none;
+    font-family: FuturaMedium;
+    letter-spacing: 0.05rem;
+}
+
+
+.nav-menus {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.nav-menus ul li {
+    list-style: none;
+    font-size: 55px;
+    font-family: Futura;
+    line-height: 55px;
 }
 
 #cursor {
     height: 180px;
     width: 180px;
-    background-color: rgba(224, 139, 189, 0.814);
+    background-color: rgba(246, 196, 170, 0.814);
     border-radius: 50%;
     position: fixed;
     transform: translate(-50%, -50%) scale(0);
@@ -172,7 +262,7 @@ body {
     width: 70%;
     position: absolute;
     z-index: 9;
-    background-color: rgb(229, 156, 186);
+    background-color: rgb(249, 196, 188);
 
 
 }
@@ -200,6 +290,90 @@ body {
 
 .child img {
     height: 100%;
+}
+
+#page4 {
+    margin-top: 10vh;
+    height: 80vh;
+    width: auto;
+    /* background-color: aquamarine;    */
+}
+
+#page4 h3 {
+    font-size: 14px;
+    color: rgb(98, 98, 98);
+}
+
+.footer-part1 {
+    display: flex;
+    justify-content: space-between;
+    height: 50vh;
+    width: 100%;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 2vh 2vw;
+}
+
+.socials li {
+    list-style: none;
+    line-height: 1.3rem;
+}
+
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 2vh 2vw;
+}
+
+
+
+.links li {
+    list-style: none;
+    text-align: end;
+    line-height: 1.3rem;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-logo img {
+    height: 29vh;
+}
+
+
+.footer-logo .copyright {
+   display: flex;
+   justify-content: space-between;
+   height: 6vh;
+   width: 100%;
+   gap: 20px;
+   font-size: 12px;
+   color: rgb(111, 111, 111)
+}
+
+
+.footer-part2 {
+    display: flex;
+    /* background-color: bisque; */
+    height: 30vh;
+    width: 100%;
+    text-align: center;
+    padding: 8vh 18vw;
+}
+
+.footer-part2 p {
+    font-size: 16px;
+    font-weight: 100;
 }
 
 
